@@ -1,7 +1,9 @@
+@import './scss/mixin.scss';
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 html {
@@ -12,11 +14,10 @@ body {
     font-family: 'Hind', sans-serif;
 }
 
+
 .container {
     max-width: 1024px;
     margin: 0 auto;
-
-
 }
 
 .header {
@@ -45,7 +46,10 @@ body {
         justify-content: center;
     }
     &__img {
-        width: 50%;
+        width: 72%;
+        @include md {
+            width: 75%;
+        }
     }
 
     &__textCircle {
@@ -55,19 +59,36 @@ body {
         color: white;
         font-size: 1.1rem;
         font-weight: 700;
+        @include lg {
+            font-size: 1rem;
+        }
+        @include md {
+            font-size: 0.9rem;
+        }
+
     }
 
     &__border {
         border: 1px solid #959a9e;
         border-radius: 50%;
-        width: 600px;
-        height: 600px;
+        width: 430px;
+        height: 430px;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 14.5rem;
         margin-bottom: 14.5rem;
+
+        @include lg {
+            width: 390px;
+            height: 390px;
+        }
+
+        @include md {
+            width: 350px;
+            height: 350px;
+        }
     }
 
     &__circle {
@@ -79,6 +100,19 @@ body {
         background-color: #f4f7f9;
         background-repeat: no-repeat;
         background-position: center;
+
+        @include lg {
+            height: 6.5rem;
+            width: 6.5rem;
+            background-size: auto;
+        }
+
+        @include md {
+            height: 4.5rem;
+            width: 4.5rem;
+            border: 2px solid #d4dbe0;
+            background-size: 24px;
+        }
         
         &--manageProject {
             top: -33px;
@@ -86,13 +120,13 @@ body {
         }
 
         &--grant {
-            top: 4px;
-            right: 103px;
+            top: 0px;
+            right: 59px;
             background-image: url('./img/manageproject.png');
         }
 
         &--tax {
-            top: 120px;
+            top: 82px;
             right: -6px;
             background-image: url('./img/grant.png');
         }
@@ -103,13 +137,13 @@ body {
         }
 
         &--investor {
-            bottom: 4px;
-            right: 103px;
+            bottom: 0;
+            right:59px;
             background-image: url('./img/property.png');
         }
 
         &--trade {
-            bottom: 120px;
+            bottom: 82px;
             right: -6px;
             background-image: url('./img/investor.png');
         }
@@ -121,31 +155,31 @@ body {
         }
 
         &--crowfunding {
-            left: -33px;
+            left: -38px;
             background-image: url('./img/crowfunding.png');
         }
 
         &--marketing {
-            top: 4px;
-            left: 103px;
+            top: 0px;
+            left: 59px;
             background-image: url('./img/marketing.png');
         }
 
         &--insurance {
-            top: 120px;
-            left: -6px;
+            top: 82px;
+            left: -19px;
             background-image: url('./img/insurance.png');
         }
 
         &--productivity {
-            bottom: 120px;
-            left: -6px;
+            bottom: 82px;
+            left: -11px;
             background-image: url('./img/insurance.png');
         }
 
         &--intelectual {
-            bottom: 4px;
-            left: 103px;
+            bottom: 0;
+            left:59px;
             background-image: url('./img/intelectual.png');
         }
     }
@@ -153,76 +187,180 @@ body {
     &__descCircle {
         position: absolute;
         color: #2f2f2f;
-        min-width: 500px;
+        white-space: nowrap; 
+        font-size: 1.4rem;
 
-        font-size: 1.6rem;
+        @include lg {
+            white-space: normal; 
+            width: 100px;
+            text-align: left;
+        }
+
+        @include md {
+            font-size: 1.1rem;
+        }
 
         &--manage {
-            top: -46px;
-            left: -212px;
+            top: -39px;
+            left: -42px;
+            @include lg{
+                top: -41px;
+                left: -34px;
+                white-space: nowrap;
+            }
+
         }
 
         &--grant {
             top: 23px;
-            right: -397px;
+            right: -231px;
+        @include lg{
+            top: 0px;
+            right: -121px;
+        }
+    
 
         }
 
         &--tax {
-            top: 26px;
-            right: -426px;
+            top: 15px;
+            right: -292px;
+            @include lg{
+            top: -11px;
+            right: -129px;
+            }
 
+            @include md {
+                top: -11px;
+                right: -119px;
+            }
         }
 
         &--law {
             top: 22px;
-            right: -368px;
+            right: -172px;
 
+            @include lg {
+                top: 8px;
+                left: 82px;
+            }
+
+            @include md {
+                top: 4px;
+                left: 50px;
+
+            }
         }
 
         &--investor {
             bottom: 16px;
-            left: -22px;
-
+            left: 89px;
+            @include lg {
+                bottom: -45px;
+                left: 72px;
+            }
+            @include md {
+                bottom: -36px;
+                left: 48px;
+            }
         }
 
         &--trade {
-            bottom: 19px;
+            bottom: -26px;
+            left: 80px;
+
+            @include lg {
+                bottom: -38px;
+                left: 80px;
+            }
+
+            @include md {
+                bottom: -38px;
+                left: 58px;
+            }
+
         }
 
 
         &--immovables {
             bottom: -46px;
-            left: -212px;
+            left: -7px;
+
+            @include md {
+                bottom: -31px;
+                left: -12px;
+            }
         }
 
         &--crowfunding {
             top: 22px;
-            left: -332px;
+            left: -114px;
+
+            @include md {
+                top: 13px;
+                left: -85px;
+            }
         }
 
         &--marketing {
         top: 23px;
-        left: -323px;
+        left: -120px;
 
             &:after {
             content: "\00b0"
-        }
+            }
+
+            @include md {
+                top: 14px;
+                left: -95px;
+            
+            }
         }
 
         &--insurance {
             top: 26px;
-            left: -390px;
+            left: -226px;
+
+            @include lg {
+                top: 6px;
+                left: -127px;
+            }
+
+            @include md {
+                left: -98px;
+            }
         }
 
         &--productivity {
             bottom: 19px;
-            left: -387px;
+            left: -205px;
+
+            @include lg {
+
+             bottom: -2px;
+            left: -118px;
+
+            }
+
+            @include md {
+                left: -98px;
+            }
         }
 
         &--intelectual {
            bottom: 16px;
-           left: -430px;
+           left: -274px;
+
+           @include lg {
+            bottom: -45px;
+            left: -117px;
+           }
+
+           @include md {
+            bottom: -45px;
+            left: -94px;
+        
+           }
         }
     
     }
@@ -250,12 +388,14 @@ body {
         font-family: 'Roboto', sans-serif;
         font-size: 1.8rem;
         margin-top: 3.6rem;
+        font-weight: 100;
+        
     }
 
     &__form {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 5rem;
+        margin: 5rem 2rem 0 2rem;
         justify-content: space-between;
        
     }
@@ -270,10 +410,21 @@ body {
         padding-bottom: 2rem;
         font-family: 'Roboto', sans-serif;
         font-size: 1.6rem;
+        outline: none;
     
        
         &--marginRight {
             margin-right: 0;
+        }
+
+        @include md {
+            flex-basis: 45%;
+            margin-right: 0;
+            margin-bottom: 2rem;
+        }
+
+        @include s {
+            flex-basis: 100%;
         }
     }
 
@@ -286,6 +437,7 @@ body {
         font-family: 'Roboto', sans-serif;
         font-size: 1.6rem;
         margin-bottom: 3rem;
+        outline: none;
     }
 
     &__bottom {
@@ -331,6 +483,16 @@ body {
         border: 1px solid #35a8e0;
         border-radius: 8px;
         font-size: 1.4rem;
+        outline: none;
+    }
+
+    &__colorSpan {
+        color: #3293ce;
+    }
+
+    &__phone {
+        font-weight: 700;
+        color: white;
     }
 }
 
